@@ -5,6 +5,7 @@ let logout = document.getElementById("logout");
 let navbar = document.getElementById("navbar");
 let goToTop = document.getElementById("top");
 let reward = document.getElementById("reward");
+let rewardImg = document.getElementById("imgReward");
 let startSection = document.getElementById("start");
 const getModalWin = document.getElementById("modal-bg-win");
 const getModalLose = document.getElementById("modal-bg-lose");
@@ -173,7 +174,6 @@ const rollDiceLevel2 = () => {
 };
 const winnerLevel2 = () => {
   if (boxLevel21.textContent == boxLevel22.textContent && boxLevel21.textContent == boxLevel23.textContent && boxLevel21.textContent == boxLevel24.textContent) {
-    console.log(`pkee`);
     modalWinLevel2();
   } else {
     modalLose();
@@ -204,12 +204,12 @@ const rollDiceLevel3 = () => {
   setTimeout(() => {
     clearInterval(setTimeoutDiceLevel3);
     winnerLevel3();
-  }, 700);
+  }, 600);
 };
 
 const winnerLevel3 = () => {
   if (boxLevel31.textContent == boxLevel32.textContent && boxLevel31.textContent == boxLevel33.textContent && boxLevel31 == boxLevel34.textContent && boxLevel31.textContent == boxLevel35.textContent) {
-    modalWin();
+    rewardId();
   } else {
     modalLose();
   }
@@ -270,10 +270,9 @@ const rewardId = () => {
   fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
     .then((x) => x.json())
     .then((data) => {
-      console.log(`reward anda dalah:`, data);
-      const img = new Image(500, 500);
+      let img = new Image(500, 500);
       img.src = data.image_link;
-      reward.appendChild(img);
+      rewardImg.appendChild(img);
       reward.style.display = "block";
       setTimeout(() => {
         location.href = "#reward";
