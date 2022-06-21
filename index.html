@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Deacode - Template HTML Basic</title>
+  </head>
+  <body>
+    <section id="home">
+      <div class="container">
+        <!-- navigation bar start -->
+        <div class="navwrapper" id="navbar">
+          <ul class="navigation">
+            <li class="nav">
+              <a href="#home" class="navlink">HOME</a>
+            </li>
+            <li class="nav">
+              <a href="#start" class="navlink">START</a>
+            </li>
+            <li class="nav">
+              <a href="#reward" class="navlink">REWARD</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contentwrapper">
+          <div class="title" id="title">Register Here</div>
+          <div id="registerform">
+            <input type="text" placeholder="username" id="username" />
+            <button onclick="register()" id="register">Register Here</button>
+          </div>
+          <button onclick="logoutForm()" id="logout">logout Here</button>
+        </div>
+      </div>
+    </section>
+    <section id="start">
+      <div class="container red">
+        <div class="gamewrapper">
+          <div class="box" id="box1"></div>
+          <div class="box" id="box2"></div>
+          <div class="box" id="box3"></div>
+        </div>
+        <div class="buttonwrapper">
+          <button class="startButton" onclick="start()">START</button>
+        </div>
+      </div>
+    </section>
+    <section id="start-level2">
+      <div class="container red">
+        <div class="gamewrapper">
+          <div class="box" id="box1-level-2"></div>
+          <div class="box" id="box2-level-2"></div>
+          <div class="box" id="box3-level-2"></div>
+          <div class="box" id="box4-level-2"></div>
+        </div>
+        <div class="buttonwrapper">
+          <button class="startButton" onclick="rollDiceLevel2()">START</button>
+        </div>
+      </div>
+    </section>
+    <section id="start-level3">
+      <div class="container red">
+        <div class="gamewrapper">
+          <div class="box" id="box1-level-3"></div>
+          <div class="box" id="box2-level-3"></div>
+          <div class="box" id="box3-level-3"></div>
+          <div class="box" id="box4-level-3"></div>
+          <div class="box" id="box5-level-3"></div>
+        </div>
+        <div class="buttonwrapper">
+          <button class="startButton" onclick="rollDiceLevel3()">START</button>
+        </div>
+      </div>
+    </section>
+    <section id="reward">
+      <div class="container blue">
+        <div class="contentwrapper" id="imgReward">
+          <h1>REWARD BUAT ANDA 👨‍🦰</h1>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal-bg" id="modal-bg-win">
+      <div class="modal-popUp-win">
+        <h1>You Win</h1>
+        <p>Go to next level ?</p>
+        <div class="buttonwrapper">
+          <button class="startButton-modal-yes" onclick="nextLevel()">YES</button>
+          <button class="startButton-modal-no" onclick="closeModal()">NO</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-bg-lose" id="modal-bg-lose">
+      <div class="modal-popUp-lose">
+        <h1>You Lose</h1>
+        <p>Try Again?</p>
+        <div class="buttonwrapper">
+          <button class="startButton-modal-yes" onclick="goToHome()">YES</button>
+          <button class="startButton-modal-no" onclick="btnLoseLogout()">NO</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-bg-level2" id="modal-bg-level2">
+      <div class="modal-popUp-lose">
+        <h1>You Win</h1>
+        <p>Go To level 3 ?</p>
+        <div class="buttonwrapper">
+          <button class="startButton-modal-yes" onclick="goToLevel3()">YES</button>
+          <button class="startButton-modal-no" onclick="closeModal()">NO</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="top" id="top" onclick="directing()">☝</div>
+    <script>
+      function directing() {
+        location.href = "#home";
+      }
+    </script>
+    <script src="module/Player.js"></script>
+    <script src="new-init.js"></script>
+    <script src="module/new-utils.js"></script>
+  </body>
+</html>
