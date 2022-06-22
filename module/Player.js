@@ -39,7 +39,6 @@ class Player {
     if (gachaOption1.textContent == gachaOption2.textContent && gachaOption1.textContent == gachaOption3.textContent) {
       modalWin();
     } else {
-      this.rewardId;
       modalLose();
     }
   }
