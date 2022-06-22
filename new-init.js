@@ -1,11 +1,11 @@
 const player = new Player();
 
-function register() {
+const register = () => {
   player.register = username.value;
   clear();
   display();
   direc("#start", 500);
-}
+};
 
 onload = () => {
   if (player.token && player.token !== "") {

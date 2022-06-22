@@ -69,10 +69,10 @@ const reset = () => {
   startLevel3.style.display = "none";
 };
 
-function clear() {
+const clear = () => {
   username.value = "";
   registerform.style.display = "none";
-}
+};
 
 //clear game and reward section
 const clearGame = () => {
@@ -83,15 +83,14 @@ const clearGame = () => {
 
 const clearLevel1 = () => (startSection.style.display = "none");
 const showGameLvl2 = () => (startLevel2.style.display = "block");
-
 const clearLevel2 = () => (startLevel2.style.display = "none");
 const showGameLvl3 = () => (startLevel3.style.display = "block");
 
-function nextLevel3() {
+const nextLevel3 = () => {
   clearLevel1();
   clearLevel2();
   showGameLvl3();
-}
+};
 
 const display = () => {
   title.textContent = `Welcome ${sessionStorage.getItem("token")}`;
@@ -110,7 +109,6 @@ const display = () => {
   getBoxLevel3();
 };
 
-
 const modalWinLevel2 = () => {
   modalLevel3.style.visibility = "visible";
   modalLevel3.style.opacity = 1;
@@ -128,36 +126,36 @@ const nextLevel = () => {
   getModalWin.style.opacity = 0;
 };
 
-function goToLevel3() {
+const goToLevel3 = () => {
   direc("#start-level3", 500);
   nextLevel3();
   modalLevel3.style.visibility = "hidden";
   modalLevel3.style.opacity = 0;
-}
+};
 
-function closeModal() {
+const closeModal = () => {
   alert(`Terimakasih telah bermain, resiko ditanggung ${sessionStorage.getItem("token")}`);
   player.logoutButton();
   location.reload();
   getModalWin.style.visibility = "hidden";
   getModalWin.style.opacity = 0;
-}
+};
 
 //modal lose
-function modalLose() {
+const modalLose = () => {
   getModalLose.style.visibility = "visible";
   getModalLose.style.opacity = 1;
-}
+};
 //button modal lose
-function goToHome() {
+const goToHome = () => {
   location.href = "#home";
   getModalLose.style.visibility = "hidden";
   getModalLose.style.opacity = 0;
-}
+};
 
-function btnLoseLogout() {
+const btnLoseLogout = () => {
   getModalLose.style.visibility = "hidden";
   getModalLose.style.opacity = 0;
   alert(`Terimakasih telah bermain, resiko ditanggung ${sessionStorage.getItem("token")}`);
   logoutForm();
-}
+};
