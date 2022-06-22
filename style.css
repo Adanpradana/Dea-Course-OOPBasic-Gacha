@@ -241,31 +241,6 @@ input[type="text"] {
   margin-top: 20px;
 }
 
-.modal-top-up {
-  position: fixed;
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.modal-popUp-topup {
-  background-color: white;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 30%;
-  height: 40%;
-}
-
 @media (max-width: 480px) {
   .nav .navlink {
     display: none;
@@ -306,5 +281,16 @@ input[type="text"] {
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+  }
+  .modal-popUp-win,
+  .modal-popUp-lose {
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 40%;
   }
 }
