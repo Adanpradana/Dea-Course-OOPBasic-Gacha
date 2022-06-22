@@ -16,7 +16,4 @@ onload = () => {
   }
 };
 
-function logoutForm() {
-  player.logoutButton();
-  location.reload();
-}
+const logoutForm = () => player.logOutPlayer;

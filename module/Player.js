@@ -15,7 +15,27 @@ class Player {
     return (this.token = session);
   }
 
-  logoutButton() {
+  //reward
+  get rewardId() {
+    fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
+      .then((x) => x.json())
+      .then((data) => {
+        let img = new Image(500, 500);
+        img.src = data.image_link;
+        rewardImg.appendChild(img);
+        reward.style.display = "block";
+        setTimeout(() => {
+          location.href = "#reward";
+        }, 1000);
+      });
+  }
+
+  get logoutButton() {
     return (this.token = sessionStorage.removeItem("token"));
+  }
+
+  get logOutPlayer() {
+    this.logoutButton;
+    location.reload();
   }
 }
