@@ -53,7 +53,7 @@ class Player {
   }
   get rollDiceLevel2() {
     const setTimeoutDice = setInterval(function () {
-      const resultLevel2 = this.startGachaLevel2;
+      const resultLevel2 = player.startGachaLevel2;
       boxLevel21.textContent = resultLevel2[0];
       boxLevel22.textContent = resultLevel2[1];
       boxLevel23.textContent = resultLevel2[2];
