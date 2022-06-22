@@ -18,4 +18,11 @@ onload = () => {
 
 const start = () => player.start;
 const rollDiceLevel2 = () => player.rollDiceLevel2;
+const rollDiceLevel3 = () => player.rollDiceLevel3;
 const logoutForm = () => player.logOutPlayer;
+
+const direc = (url, time) => {
+  setTimeout(() => {
+    location.href = url;
+  }, time);
+};

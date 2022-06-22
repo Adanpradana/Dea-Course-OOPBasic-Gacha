@@ -39,7 +39,7 @@ class Player {
     if (gachaOption1.textContent == gachaOption2.textContent && gachaOption1.textContent == gachaOption3.textContent) {
       modalWin();
     } else {
-      // modalLose();
+      modalLose();
     }
   }
   //init level 2
@@ -70,7 +70,39 @@ class Player {
     if (boxLevel21.textContent == boxLevel22.textContent && boxLevel21.textContent == boxLevel23.textContent && boxLevel21.textContent == boxLevel24.textContent) {
       modalWinLevel2();
     } else {
-      // modalLose();
+      modalLose();
+    }
+  }
+
+  //init level 3
+  get rollingDiceLevel3() {
+    const array2 = [];
+    for (let i = 0; i < gachaOptionLevel3.length; i++) {
+      const randomNumber3 = gachaOptionLevel3[~~(Math.random() * gachaOptionLevel3.length)];
+      array2.push(randomNumber3);
+    }
+    return array2;
+  }
+  get rollDiceLevel3() {
+    const setTimeoutDiceLevel3 = setInterval(function () {
+      const resultLevel3 = player.rollingDiceLevel3;
+      boxLevel31.textContent = resultLevel3[0];
+      boxLevel32.textContent = resultLevel3[1];
+      boxLevel33.textContent = resultLevel3[2];
+      boxLevel34.textContent = resultLevel3[3];
+      boxLevel35.textContent = resultLevel3[4];
+    }, 100);
+
+    setTimeout(() => {
+      clearInterval(setTimeoutDiceLevel3);
+      this.winnerLevel3;
+    }, 600);
+  }
+  get winnerLevel3() {
+    if (boxLevel31.textContent == boxLevel32.textContent && boxLevel31.textContent == boxLevel33.textContent && boxLevel31 == boxLevel34.textContent && boxLevel31.textContent == boxLevel35.textContent) {
+      this.rewardId;
+    } else {
+      modalLose();
     }
   }
   //reward
