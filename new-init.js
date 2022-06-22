@@ -16,4 +16,6 @@ onload = () => {
   }
 };
 
+const start = () => player.start;
+const rollDiceLevel2 = () => player.rollDiceLevel2;
 const logoutForm = () => player.logOutPlayer;

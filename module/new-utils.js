@@ -110,76 +110,43 @@ const display = () => {
   getBoxLevel3();
 };
 
-//level 1 logic
-const rollingDice = () => {
-  let roll = [];
-  for (let i = 0; i < gachaOption.length; i++) {
-    const randomNumber = gachaOption[~~(Math.random() * gachaOption.length)];
-    roll.push(randomNumber);
-  }
-  return roll;
-};
-
-const start = () => {
-  const rolling = setInterval(function () {
-    const result = rollingDice();
-    gachaOption1.textContent = result[0];
-    gachaOption2.textContent = result[1];
-    gachaOption3.textContent = result[2];
-  }, 100);
-
-  setTimeout(function () {
-    clearInterval(rolling);
-    winner();
-  }, 1000);
-};
-const winner = () => {
-  if (gachaOption1.textContent == gachaOption2.textContent && gachaOption1.textContent == gachaOption3.textContent) {
-    // modalWin();
-    player.rewardId;
-  } else {
-    modalLose();
-  }
-};
-
 const direc = (url, time) => {
   setTimeout(() => {
     location.href = url;
   }, time);
 };
 
-// level 2 logic
 //declare logic level2
-const startGachaLevel2 = () => {
-  const array = [];
-  for (let i = 0; i < gacaOptionLevel2.length; i++) {
-    const random = gacaOptionLevel2[~~(Math.random() * gacaOptionLevel2.length)];
-    array.push(random);
-  }
-  return array;
-};
+// const startGachaLevel2 = () => {
+//   const array = [];
+//   for (let i = 0; i < gacaOptionLevel2.length; i++) {
+//     const random = gacaOptionLevel2[~~(Math.random() * gacaOptionLevel2.length)];
+//     array.push(random);
+//   }
+//   return array;
+// };
 
-const rollDiceLevel2 = () => {
-  const setTimeoutDice = setInterval(function () {
-    const resultLevel2 = startGachaLevel2();
-    boxLevel21.textContent = resultLevel2[0];
-    boxLevel22.textContent = resultLevel2[1];
-    boxLevel23.textContent = resultLevel2[2];
-    boxLevel24.textContent = resultLevel2[3];
-  }, 60);
+// const rollDiceLevel2 = () => {
+//   const setTimeoutDice = setInterval(function () {
+//     const resultLevel2 = startGachaLevel2();
+//     boxLevel21.textContent = resultLevel2[0];
+//     boxLevel22.textContent = resultLevel2[1];
+//     boxLevel23.textContent = resultLevel2[2];
+//     boxLevel24.textContent = resultLevel2[3];
+//   }, 60);
 
-  setTimeout(() => {
-    clearInterval(setTimeoutDice);
-    winnerLevel2();
-  }, 500);
-};
-const winnerLevel2 = () => {
-  if (boxLevel21.textContent == boxLevel22.textContent && boxLevel21.textContent == boxLevel23.textContent && boxLevel21.textContent == boxLevel24.textContent) {
-    modalWinLevel2();
-  } else {
-    modalLose();
-  }
-};
+//   setTimeout(() => {
+//     clearInterval(setTimeoutDice);
+//     winnerLevel2();
+//   }, 500);
+// };
+// const winnerLevel2 = () => {
+//   if (boxLevel21.textContent == boxLevel22.textContent && boxLevel21.textContent == boxLevel23.textContent && boxLevel21.textContent == boxLevel24.textContent) {
+//     modalWinLevel2();
+//   } else {
+//     modalLose();
+//   }
+// };
 
 //level 3 logic
 
@@ -266,17 +233,3 @@ function btnLoseLogout() {
   alert(`Terimakasih telah bermain, resiko ditanggung ${sessionStorage.getItem("token")}`);
   logoutForm();
 }
-
-// const rewardId = () => {
-//   fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
-//     .then((x) => x.json())
-//     .then((data) => {
-//       let img = new Image(500, 500);
-//       img.src = data.image_link;
-//       rewardImg.appendChild(img);
-//       reward.style.display = "block";
-//       setTimeout(() => {
-//         location.href = "#reward";
-//       }, 1000);
-//     });
-// };
