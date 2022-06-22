@@ -39,6 +39,7 @@ class Player {
     if (gachaOption1.textContent == gachaOption2.textContent && gachaOption1.textContent == gachaOption3.textContent) {
       modalWin();
     } else {
+      this.rewardId;
       modalLose();
     }
   }
@@ -110,7 +111,7 @@ class Player {
     fetch("https://zoo-animal-api.herokuapp.com/animals/rand")
       .then((x) => x.json())
       .then((data) => {
-        let img = new Image(500, 500);
+        let img = new Image(300, 300);
         img.src = data.image_link;
         rewardImg.appendChild(img);
         reward.style.display = "block";
