@@ -256,8 +256,8 @@ input[type="text"] {
     cursor: pointer;
   }
   .gamewrapper {
-    display: grid;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -265,7 +265,7 @@ input[type="text"] {
   }
   .grid {
     display: grid;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .grid2 {
