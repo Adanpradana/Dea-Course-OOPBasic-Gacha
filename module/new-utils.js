@@ -99,7 +99,7 @@ const display = () => {
   navbar.style.justifyContent = "space-between";
   logout.style.display = "block";
   goToTop.style.display = "flex";
-  startSection.style.display = "flex";
+  startSection.style.display = "block";
   clearGame();
   // level 1 gacha box
   getBoxLevel1();
